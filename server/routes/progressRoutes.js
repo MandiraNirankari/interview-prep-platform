@@ -1,5 +1,5 @@
 const express = require('express')
-const Progress = require('../models/Progress')
+const Progress = require('../models/progress')
 const protect = require('../middleware/authMiddleware')
 
 const router = express.Router()
