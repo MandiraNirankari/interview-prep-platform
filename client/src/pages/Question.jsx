@@ -138,7 +138,7 @@ function Question() {
   const [solved, setSolved] = useState(false)
 
   const [code, setCode] = useState(
-`function solution(input) {
+    `function solution(input) {
   // Write your solution here
 
 }`
@@ -159,10 +159,7 @@ function Question() {
         setQuestion(foundQuestion)
       })
       .catch((error) => {
-        console.error(
-          'Failed to load question:',
-          error
-        )
+        console.error('Failed to load question:', error)
       })
   }, [questionId])
 
@@ -184,10 +181,7 @@ function Question() {
         }
       })
       .catch((error) => {
-        console.error(
-          'Failed to load progress:',
-          error
-        )
+        console.error('Failed to load progress:', error)
       })
   }, [questionId, token])
 
@@ -205,7 +199,13 @@ function Question() {
               userCode + '\\nreturn solution;'
             )()
 
-            const result = fn([2, 7, 11, 15])
+            // Two Sum test input
+            const testInput = {
+              nums: [2, 7, 11, 15],
+              target: 9
+            }
+
+            const result = fn(testInput)
 
             self.postMessage({
               success: true,
@@ -291,7 +291,6 @@ function Question() {
           'Error: Execution timed out.'
         )
       }, 3000)
-
     } catch (error) {
       setOutput(
         `Error: ${error.message}`
@@ -332,7 +331,6 @@ function Question() {
       setSubmitMessage(
         '✓ Solution submitted successfully!'
       )
-
     } catch (error) {
       console.error(
         'Submission failed:',
@@ -343,7 +341,6 @@ function Question() {
         error.message ||
         'Failed to submit solution.'
       )
-
     } finally {
       setSubmitting(false)
     }
@@ -352,17 +349,13 @@ function Question() {
   if (!question) {
     return (
       <div className="min-h-screen bg-gray-950 text-white">
-
         <Navbar />
 
         <main className="mx-auto max-w-7xl px-8 py-12">
-
           <h1 className="text-3xl font-bold">
             Question not found
           </h1>
-
         </main>
-
       </div>
     )
   }
@@ -371,15 +364,12 @@ function Question() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
-
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-6 py-8">
-
         <div className="grid gap-6 lg:grid-cols-2">
 
           {/* Problem */}
-
           <section className="rounded-xl border border-gray-800 bg-gray-900 p-6">
 
             <div className="flex items-center justify-between">
@@ -417,7 +407,6 @@ function Question() {
             </div>
 
             {/* Example */}
-
             <div className="mt-8">
 
               <h2 className="text-xl font-semibold">
@@ -441,7 +430,6 @@ function Question() {
           </section>
 
           {/* Code */}
-
           <section className="rounded-xl border border-gray-800 bg-gray-900 p-6">
 
             <div className="flex items-center justify-between">
@@ -518,9 +506,7 @@ function Question() {
           </section>
 
         </div>
-
       </main>
-
     </div>
   )
 }
