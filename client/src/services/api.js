@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api'
+const API_URL = 'https://interview-prep-platform-backend-la3z.onrender.com/api'
 
 export async function getQuestions() {
   const response = await fetch(`${API_URL}/questions`)
