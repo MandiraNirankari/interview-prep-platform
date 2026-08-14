@@ -1,6 +1,6 @@
 const express = require('express')
 const Submission = require('../models/Submission')
-const Progress = require('../models/Progress')
+const Progress = require('../models/progress')
 const protect = require('../middleware/authMiddleware')
 
 const router = express.Router()
