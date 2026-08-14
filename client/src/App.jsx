@@ -6,8 +6,8 @@ import MockInterview from './pages/MockInterview'
 import Progress from './pages/Progress'
 import Topic from './pages/Topic'
 import Question from './pages/Question'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import Login from "./pages/login";
+import Register from "./pages/register";
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
 function App() {
